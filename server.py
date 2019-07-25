@@ -20,7 +20,7 @@ from argparse import ArgumentParser
 parser = ArgumentParser()
 
 parser.add_argument(
-    '-c', '--config', type=str, required=False, help='Sets config file path'
+    '-c', '--config', type=str, required=False, help='Sets config file'
 )
 
 args = parser.parse_args()

@@ -6,15 +6,15 @@ from argparse import ArgumentParser
 parser = ArgumentParser()
 
 parser.add_argument(
-    '-c', '--config', type=str, required=False, help='Sets config file path'
+    '-c', '--config', type=str, required=False, help='Sets config file'
 )
 
 parser.add_argument(
-    '-p', '--port', type=int, required=False, help='Sets port number'
+    '-p', '--port', type=int, required=False, help='Sets server port number'
 )
 
 parser.add_argument(
-    '-a', '--address', type=str, required=False, help = 'Sets ip address for bind'
+    '-a', '--address', type=str, required=False, help = 'Sets server ip address'
 )
 
 args = parser.parse_args()
