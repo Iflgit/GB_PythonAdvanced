@@ -2,8 +2,8 @@ import yaml
 import socket
 import json
 from argparse import ArgumentParser
-from protocol import validate_request, make_response
-from actions import resolve
+from .protocol import validate_request, make_response
+from .actions import resolve
 
 # import ctypes, sys
 
