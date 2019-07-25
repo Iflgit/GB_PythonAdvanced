@@ -3,6 +3,7 @@ import socket
 import json
 from argparse import ArgumentParser
 from protocol import validate_request, make_response
+from actions import resolve
 
 # import ctypes, sys
 
@@ -52,29 +53,34 @@ try:
 
     while True:
         print('waiting for client connections... ')
-        client, address = server_socket.accept()
-        print(f'Client was detected {address[0]}:{address[1]}')
+        client_socket, client_address = server_socket.accept()
+        print(f'Client was detected {client_address[0]}:{client_address[1]}')
 
-        client_request = client.recv(config.get('buffersize')).decode()
+        client_request = client_socket.recv(config.get('buffersize')).decode()
         print(f'Client send data {client_request}')
 
         request = json.loads(client_request)
 
         if validate_request(request):
-            try:
-                print(f'Client send valid request {request}')
-                response = make_response(request, 200, data=request.get('data'))
-            except Exception as err:
-                print(f'Internal server error: {err}')
-                response = make_response(request, 500, data='Internal erver error')
+            action_name = request.get('action')
+            controller = resolve(action_name)
+            if controller:
+                try:
+                    print(f'Client send valid request {request}')
+                    response = controller(request)
+                except Exception as err:
+                    print(f'Internal server error: {err}')
+                    response = make_response(request, 500, data='Internal erver error')
+            else:
+                print(f'Controller with action name {action_name} does not exists')
+                response = make_response(request, 404, 'Action not found')
         else:
-            print(f'CLient send invalid request {request}')
+            print(f'Client send invalid request {request}')
             response = make_response(request, 400, 'Wrong request')
 
         str_responce = json.dumps(response)
-        client.send(str_responce.encode())
-
-        client.close()
+        client_socket.send(str_responce.encode())
+        client_socket.close()
 except KeyboardInterrupt:
     print('Server shutdown.')
 except OSError:
