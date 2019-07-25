@@ -1,6 +1,8 @@
 import yaml
 import socket
+import json
 from argparse import ArgumentParser
+from protocol import validate_request, make_response
 
 # import ctypes, sys
 
@@ -54,9 +56,24 @@ try:
         print(f'Client was detected {address[0]}:{address[1]}')
 
         client_request = client.recv(config.get('buffersize')).decode()
-        print(f'Client send message {client_request}')
+        print(f'Client send data {client_request}')
 
-        client.send((f'ECHO {client_request}').encode())
+        request = json.loads(client_request)
+
+        if validate_request(request):
+            try:
+                print(f'Client send valid request {request}')
+                response = make_response(request, 200, data=request.get('data'))
+            except Exception as err:
+                print(f'Internal server error: {err}')
+                response = make_response(request, 500, data='Internal erver error')
+        else:
+            print(f'CLient send invalid request {request}')
+            response = make_response(request, 400, 'Wrong request')
+
+        str_responce = json.dumps(response)
+        client.send(str_responce.encode())
+
         client.close()
 except KeyboardInterrupt:
     print('Server shutdown.')
