@@ -1,5 +1,5 @@
 from functools import reduce
-from settings import INSTALLED_APPS
+from server.settings import INSTALLED_APPS
 
 
 def get_server_actions():
