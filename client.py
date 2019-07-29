@@ -21,10 +21,6 @@ parser.add_argument(
 
 args = parser.parse_args()
 
-#if args.help:
-#    parser.print_help()
-#    exit(0)
-
 config = {
     'host': 'localhost',
     'port': 8001,

@@ -2,8 +2,8 @@ import yaml
 import socket
 import json
 from argparse import ArgumentParser
-from .protocol import validate_request, make_response
-from .actions import resolve
+from protocol import validate_request, make_response
+from actions import resolve
 
 parser = ArgumentParser()
 
@@ -70,3 +70,4 @@ except KeyboardInterrupt:
     print('Server shutdown.')
 except OSError:
     print(f'Cant start server. No administrative privelegue or {host}:{port} is busy')
+
