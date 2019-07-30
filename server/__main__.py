@@ -1,6 +1,7 @@
 import yaml
 import socket
 import json
+import logging
 from argparse import ArgumentParser
 from protocol import validate_request, make_response
 from actions import resolve
@@ -24,25 +25,41 @@ if args.config:
         file_config = yaml.load(file, Loader=yaml.Loader)
         config.update(file_config)
 
+logger = logging.getLogger('main')
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+
+file_handler = logging.FileHandler('main.log')
+stream_handler = logging.StreamHandler()
+
+file_handler.setLevel(logging.DEBUG)
+stream_handler.setLevel(logging.DEBUG)
+
+file_handler.setFormatter(formatter)
+stream_handler.setFormatter(formatter)
+
+logger.addHandler(file_handler)
+logger.addHandler(stream_handler)
+logger.setLevel(logging.DEBUG)
+
 host, port = config.get('host'), config.get('port')
 
 try:
-    print('creating socet...')
+    logger.info('creating socet...')
     server_socket = socket.socket()
-    print(f'binding socket on {host}:{port}')
+    logger.info(f'binding socket on {host}:{port}')
     server_socket.bind((host, port))
-    print(f'listening for /{5}/ clients')
+    logger.info(f'listening for /{5}/ clients')
     server_socket.listen(5)
 
-    print(f'Server started on {host}:{port}. Ctrl+C for exit.')
+    logger.info(f'Server started on {host}:{port}. Ctrl+C for exit.')
 
     while True:
-        print('waiting for client connections... ')
+        logger.info('waiting for client connections... ')
         client_socket, client_address = server_socket.accept()
-        print(f'Client was detected {client_address[0]}:{client_address[1]}')
+        logger.info(f'Client was detected {client_address[0]}:{client_address[1]}')
 
         client_request = client_socket.recv(config.get('buffersize')).decode()
-        print(f'Client send data {client_request}')
+        logger.info(f'Client send data {client_request}')
 
         request = json.loads(client_request)
 
@@ -51,23 +68,23 @@ try:
             controller = resolve(action_name)
             if controller:
                 try:
-                    print(f'Client send valid request {request}')
+                    logger.info(f'Client send valid request {request}')
                     response = controller(request)
                 except Exception as err:
-                    print(f'Internal server error: {err}')
+                    logger.critical(f'Internal server error: {err}')
                     response = make_response(request, 500, data='Internal erver error')
             else:
-                print(f'Controller with action name {action_name} does not exists')
+                logger.error(f'Controller with action name {action_name} does not exists')
                 response = make_response(request, 404, 'Action not found')
         else:
-            print(f'Client send invalid request {request}')
+            logger.info(f'Client send invalid request {request}')
             response = make_response(request, 400, 'Wrong request')
 
         str_responce = json.dumps(response)
         client_socket.send(str_responce.encode())
         client_socket.close()
 except KeyboardInterrupt:
-    print('Server shutdown.')
+    logger.info('Server shutdown.')
 except OSError:
-    print(f'Cant start server. No administrative privelegue or {host}:{port} is busy')
+    logger.critical(f'Cant start server. No administrative privelegue or {host}:{port} is busy')
 
