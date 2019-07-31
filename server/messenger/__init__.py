@@ -1,0 +1,2 @@
+print('messanger app init')
+
