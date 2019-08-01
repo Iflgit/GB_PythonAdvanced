@@ -25,27 +25,30 @@ if args.config:
         file_config = yaml.load(file, Loader=yaml.Loader)
         config.update(file_config)
 
-# logger = logging.getLogger('main')
-# formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+'''just keep it there for history
 
-# file_handler = logging.FileHandler('main.log')
-# stream_handler = logging.StreamHandler()
+logger = logging.getLogger('main')
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 
-# file_handler.setLevel(logging.DEBUG)
-# stream_handler.setLevel(logging.DEBUG)
+file_handler = logging.FileHandler('main.log')
+stream_handler = logging.StreamHandler()
 
-# file_handler.setFormatter(formatter)
-# stream_handler.setFormatter(formatter)
+file_handler.setLevel(logging.DEBUG)
+stream_handler.setLevel(logging.DEBUG)
 
-# logger.addHandler(file_handler)
-# logger.addHandler(stream_handler)
-# logger.setLevel(logging.DEBUG)
+file_handler.setFormatter(formatter)
+stream_handler.setFormatter(formatter)
+
+logger.addHandler(file_handler)
+logger.addHandler(stream_handler)
+logger.setLevel(logging.DEBUG)
+'''
 
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers = [
-        logging.FileHandler('main.log'),
+        logging.FileHandler('debug.log'),
         logging.StreamHandler()
     ]
 )
@@ -57,7 +60,7 @@ try:
     server_socket = socket.socket()
     logging.info(f'binding socket on {host}:{port}')
     server_socket.bind((host, port))
-    logging.info(f'listening for /{5}/ clients')
+    logging.info(f'listening for up to {5} clients')
     server_socket.listen(5)
 
     logging.info(f'Server started on {host}:{port}. Ctrl+C for exit.')
@@ -96,4 +99,5 @@ except KeyboardInterrupt:
     logging.info('Server shutdown.')
 except OSError:
     logging.critical(f'Cant start server. No administrative privelegue or {host}:{port} is busy')
-
+except Exception as err:
+    logging.critical(f'Unhandled Internal server error: {err}')

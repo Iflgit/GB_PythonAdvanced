@@ -1,0 +1,131 @@
+#just for history
+2019-08-01 12:13:17,200 - INFO - creating socet...
+2019-08-01 12:13:17,201 - INFO - binding socket on localhost:8001
+2019-08-01 12:13:17,204 - INFO - listening for up to 5 clients
+2019-08-01 12:13:17,208 - INFO - Server started on localhost:8001. Ctrl+C for exit.
+2019-08-01 12:13:17,208 - INFO - waiting for client connections... 
+2019-08-01 12:13:27,278 - INFO - Client was detected 127.0.0.1:10312
+2019-08-01 12:13:40,868 - INFO - Client send data {"action": "test", "time": 1564650820.868438, "data": "qwe"}
+2019-08-01 12:13:40,869 - CRITICAL - Unhandled Internal server error: 'str' object has no attribute '__module__'
+2019-08-01 12:14:23,506 - INFO - creating socet...
+2019-08-01 12:14:23,506 - INFO - binding socket on localhost:8001
+2019-08-01 12:14:23,510 - INFO - listening for up to 5 clients
+2019-08-01 12:14:23,513 - INFO - Server started on localhost:8001. Ctrl+C for exit.
+2019-08-01 12:14:23,514 - INFO - waiting for client connections... 
+2019-08-01 12:14:28,730 - INFO - Client was detected 127.0.0.1:10342
+2019-08-01 12:14:32,964 - INFO - Client send data {"action": "qwert", "time": 1564650872.964595, "data": "qw"}
+2019-08-01 12:14:32,965 - CRITICAL - Unhandled Internal server error: 'str' object has no attribute '__module__'
+2019-08-01 12:16:30,320 - INFO - creating socet...
+2019-08-01 12:16:30,321 - INFO - binding socket on localhost:8001
+2019-08-01 12:16:30,324 - INFO - listening for up to 5 clients
+2019-08-01 12:16:30,330 - INFO - Server started on localhost:8001. Ctrl+C for exit.
+2019-08-01 12:16:30,331 - INFO - waiting for client connections... 
+2019-08-01 12:16:34,149 - INFO - Client was detected 127.0.0.1:10415
+2019-08-01 12:16:35,828 - INFO - Client send data {"action": "sadf", "time": 1564650995.828093, "data": "sf"}
+2019-08-01 12:16:35,829 - CRITICAL - Unhandled Internal server error: 'str' object has no attribute '__module__'
+2019-08-01 12:20:51,370 - INFO - creating socet...
+2019-08-01 12:20:51,371 - INFO - binding socket on localhost:8001
+2019-08-01 12:20:51,375 - INFO - listening for up to 5 clients
+2019-08-01 12:20:51,380 - INFO - Server started on localhost:8001. Ctrl+C for exit.
+2019-08-01 12:20:51,380 - INFO - waiting for client connections... 
+2019-08-01 12:20:56,137 - INFO - Client was detected 127.0.0.1:10550
+2019-08-01 12:20:58,754 - INFO - Client send data {"action": "dfg", "time": 1564651258.754718, "data": "dfg"}
+2019-08-01 12:20:58,755 - CRITICAL - Unhandled Internal server error: update_wrapper() missing 1 required positional argument: 'wrapper'
+2019-08-01 12:24:05,399 - INFO - creating socet...
+2019-08-01 12:24:05,401 - INFO - binding socket on localhost:8001
+2019-08-01 12:24:05,403 - INFO - listening for up to 5 clients
+2019-08-01 12:24:05,408 - INFO - Server started on localhost:8001. Ctrl+C for exit.
+2019-08-01 12:24:05,408 - INFO - waiting for client connections... 
+2019-08-01 12:24:08,757 - INFO - Client was detected 127.0.0.1:10653
+2019-08-01 12:24:11,481 - INFO - Client send data {"action": "qwe", "time": 1564651451.480833, "data": "qwe"}
+2019-08-01 12:24:11,492 - ERROR - Controller with action name qwe does not exists
+2019-08-01 12:24:11,494 - INFO - waiting for client connections... 
+2019-08-01 12:26:04,623 - INFO - Server shutdown.
+2019-08-01 12:26:11,086 - INFO - creating socet...
+2019-08-01 12:26:11,087 - INFO - binding socket on localhost:8001
+2019-08-01 12:26:11,090 - INFO - listening for up to 5 clients
+2019-08-01 12:26:11,096 - INFO - Server started on localhost:8001. Ctrl+C for exit.
+2019-08-01 12:26:11,096 - INFO - waiting for client connections... 
+2019-08-01 12:26:14,510 - INFO - Client was detected 127.0.0.1:10733
+2019-08-01 12:26:18,296 - INFO - Client send data {"action": "sdf", "time": 1564651578.296092, "data": "sdf"}
+2019-08-01 12:26:18,297 - CRITICAL - Unhandled Internal server error: 'dict' object has no attribute '__module__'
+2019-08-01 12:26:56,546 - INFO - creating socet...
+2019-08-01 12:26:56,547 - INFO - binding socket on localhost:8001
+2019-08-01 12:26:56,550 - INFO - listening for up to 5 clients
+2019-08-01 12:26:56,557 - INFO - Server started on localhost:8001. Ctrl+C for exit.
+2019-08-01 12:26:56,557 - INFO - waiting for client connections... 
+2019-08-01 12:27:01,105 - INFO - Client was detected 127.0.0.1:10758
+2019-08-01 12:27:03,256 - INFO - Client send data {"action": "sdf", "time": 1564651623.255698, "data": "sd"}
+2019-08-01 12:27:03,256 - CRITICAL - Unhandled Internal server error: 'dict' object has no attribute '__module__'
+2019-08-01 12:30:21,777 - INFO - creating socet...
+2019-08-01 12:30:21,777 - INFO - binding socket on localhost:8001
+2019-08-01 12:30:21,781 - INFO - listening for up to 5 clients
+2019-08-01 12:30:21,786 - INFO - Server started on localhost:8001. Ctrl+C for exit.
+2019-08-01 12:30:21,786 - INFO - waiting for client connections... 
+2019-08-01 12:30:26,890 - INFO - Client was detected 127.0.0.1:10863
+2019-08-01 12:30:29,535 - INFO - Client send data {"action": "sd", "time": 1564651829.534627, "data": "sdf"}
+2019-08-01 12:30:29,535 - DEBUG - validate_request({'action': 'sd', 'time': 1564651829.534627, 'data': 'sdf'})
+2019-08-01 12:30:29,541 - ERROR - Controller with action name sd does not exists
+2019-08-01 12:30:29,543 - DEBUG - make_response({'action': 'sd', 'time': 1564651829.534627, 'data': 'sdf'})
+2019-08-01 12:30:29,545 - INFO - waiting for client connections... 
+2019-08-01 12:31:56,688 - INFO - Server shutdown.
+2019-08-01 12:32:00,436 - INFO - creating socet...
+2019-08-01 12:32:00,436 - INFO - binding socket on localhost:8001
+2019-08-01 12:32:00,439 - INFO - listening for up to 5 clients
+2019-08-01 12:32:00,444 - INFO - Server started on localhost:8001. Ctrl+C for exit.
+2019-08-01 12:32:00,445 - INFO - waiting for client connections... 
+2019-08-01 12:32:04,011 - INFO - Client was detected 127.0.0.1:10915
+2019-08-01 12:32:06,294 - INFO - Client send data {"action": "sdf", "time": 1564651926.294769, "data": "f"}
+2019-08-01 12:32:06,295 - DEBUG - validate_request({'action': 'sdf', 'time': 1564651926.294769, 'data': 'f'})
+2019-08-01 12:32:06,295 - DEBUG - resolve
+2019-08-01 12:32:06,296 - DEBUG - get_server_actions
+2019-08-01 12:32:06,301 - ERROR - Controller with action name sdf does not exists
+2019-08-01 12:32:06,304 - DEBUG - make_response({'action': 'sdf', 'time': 1564651926.294769, 'data': 'f'})
+2019-08-01 12:32:06,305 - INFO - waiting for client connections... 
+2019-08-01 12:34:29,871 - INFO - Server shutdown.
+2019-08-01 12:36:33,680 - INFO - creating socet...
+2019-08-01 12:36:33,681 - INFO - binding socket on localhost:8001
+2019-08-01 12:36:33,684 - INFO - listening for up to 5 clients
+2019-08-01 12:36:33,691 - INFO - Server started on localhost:8001. Ctrl+C for exit.
+2019-08-01 12:36:33,692 - INFO - waiting for client connections... 
+2019-08-01 12:36:37,378 - INFO - Client was detected 127.0.0.1:11059
+2019-08-01 12:36:39,373 - INFO - Client send data {"action": "sdf", "time": 1564652199.373197, "data": "sdf"}
+2019-08-01 12:36:39,373 - DEBUG - validate_request({'action': 'sdf', 'time': 1564652199.373197, 'data': 'sdf'})
+2019-08-01 12:36:39,374 - DEBUG - resolve
+2019-08-01 12:36:39,374 - DEBUG - get_server_actions
+2019-08-01 12:36:39,378 - ERROR - Controller with action name sdf does not exists
+2019-08-01 12:36:39,382 - DEBUG - make_response({'action': 'sdf', 'time': 1564652199.373197, 'data': 'sdf'})
+2019-08-01 12:36:39,383 - INFO - waiting for client connections... 
+2019-08-01 12:37:41,105 - INFO - Server shutdown.
+2019-08-01 12:38:12,140 - INFO - creating socet...
+2019-08-01 12:38:12,141 - INFO - binding socket on localhost:8001
+2019-08-01 12:38:12,145 - INFO - listening for up to 5 clients
+2019-08-01 12:38:12,145 - INFO - Server started on localhost:8001. Ctrl+C for exit.
+2019-08-01 12:38:12,145 - INFO - waiting for client connections... 
+2019-08-01 12:38:19,814 - INFO - Client was detected 127.0.0.1:11117
+2019-08-01 12:38:25,556 - INFO - Client send data {"action": "echo", "time": 1564652305.556437, "data": "echo"}
+2019-08-01 12:38:25,556 - DEBUG - validate_request({'action': 'echo', 'time': 1564652305.556437, 'data': 'echo'})
+2019-08-01 12:38:25,557 - DEBUG - resolve called
+2019-08-01 12:38:25,557 - DEBUG - get_server_actions called
+2019-08-01 12:38:25,561 - INFO - Client send valid request {'action': 'echo', 'time': 1564652305.556437, 'data': 'echo'}
+2019-08-01 12:38:25,562 - DEBUG - get_echo({'action': 'echo', 'time': 1564652305.556437, 'data': 'echo'})
+2019-08-01 12:38:25,562 - DEBUG - make_response({'action': 'echo', 'time': 1564652305.556437, 'data': 'echo'})
+2019-08-01 12:38:25,562 - INFO - waiting for client connections... 
+2019-08-01 12:38:50,716 - INFO - Client was detected 127.0.0.1:11134
+2019-08-01 12:38:53,196 - INFO - Client send data {"action": "sdfg", "time": 1564652333.196342, "data": "dfg"}
+2019-08-01 12:38:53,196 - DEBUG - validate_request({'action': 'sdfg', 'time': 1564652333.196342, 'data': 'dfg'})
+2019-08-01 12:38:53,197 - DEBUG - resolve called
+2019-08-01 12:38:53,197 - DEBUG - get_server_actions called
+2019-08-01 12:38:53,197 - ERROR - Controller with action name sdfg does not exists
+2019-08-01 12:38:53,206 - DEBUG - make_response({'action': 'sdfg', 'time': 1564652333.196342, 'data': 'dfg'})
+2019-08-01 12:38:53,207 - INFO - waiting for client connections... 
+2019-08-01 12:39:17,572 - INFO - Client was detected 127.0.0.1:11147
+2019-08-01 12:39:28,636 - INFO - Client send data {"action": "send", "time": 1564652368.636032, "data": "gfg"}
+2019-08-01 12:39:28,636 - DEBUG - validate_request({'action': 'send', 'time': 1564652368.636032, 'data': 'gfg'})
+2019-08-01 12:39:28,636 - DEBUG - resolve called
+2019-08-01 12:39:28,637 - DEBUG - get_server_actions called
+2019-08-01 12:39:28,638 - INFO - Client send valid request {'action': 'send', 'time': 1564652368.636032, 'data': 'gfg'}
+2019-08-01 12:39:28,647 - DEBUG - send_message({'action': 'send', 'time': 1564652368.636032, 'data': 'gfg'})
+2019-08-01 12:39:28,647 - DEBUG - make_response({'action': 'send', 'time': 1564652368.636032, 'data': 'gfg'})
+2019-08-01 12:39:28,648 - INFO - waiting for client connections... 
+2019-08-01 12:39:35,017 - INFO - Server shutdown.

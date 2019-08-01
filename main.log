@@ -1,3 +1,4 @@
+#just for history
 2019-07-30 20:08:45,315 - INFO - creating socet...
 2019-07-30 20:08:45,316 - INFO - binding socket on localhost:8001
 2019-07-30 20:08:45,319 - INFO - listening for /5/ clients
@@ -54,3 +55,4 @@
 2019-07-31 08:56:02,295 - INFO - Client send valid request {'action': 'send', 'time': 1564552562.29355, 'data': 'test'}
 2019-07-31 08:56:02,296 - DEBUG - send_message:{'action': 'send', 'time': 1564552562.29355, 'data': 'test'}
 2019-07-31 08:56:02,303 - INFO - waiting for client connections... 
+2019-08-01 12:10:39,197 - INFO - Server shutdown.
