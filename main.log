@@ -1,0 +1,58 @@
+#just for history
+2019-07-30 20:08:45,315 - INFO - creating socet...
+2019-07-30 20:08:45,316 - INFO - binding socket on localhost:8001
+2019-07-30 20:08:45,319 - INFO - listening for /5/ clients
+2019-07-30 20:08:45,319 - INFO - Server started on localhost:8001. Ctrl+C for exit.
+2019-07-30 20:08:45,319 - INFO - waiting for client connections... 
+2019-07-30 20:11:08,884 - INFO - Client was detected 127.0.0.1:10795
+2019-07-30 20:11:16,088 - INFO - Client send data {"action": "echo", "time": 1564506676.087375, "data": "qwe"}
+2019-07-30 20:11:16,114 - INFO - Client send valid request {'action': 'echo', 'time': 1564506676.087375, 'data': 'qwe'}
+2019-07-30 20:11:16,119 - INFO - waiting for client connections... 
+2019-07-30 20:17:35,771 - INFO - Server shutdown.
+2019-07-30 20:18:03,859 - INFO - creating socet...
+2019-07-30 20:18:03,861 - INFO - binding socket on localhost:8001
+2019-07-30 20:18:03,863 - INFO - listening for /5/ clients
+2019-07-30 20:18:03,869 - INFO - Server started on localhost:8001. Ctrl+C for exit.
+2019-07-30 20:18:03,869 - INFO - waiting for client connections... 
+2019-07-30 20:18:09,721 - INFO - Client was detected 127.0.0.1:11013
+2019-07-30 20:18:18,484 - INFO - Client send data {"action": "error", "time": 1564507098.48416, "data": "message"}
+2019-07-30 20:18:18,495 - ERROR - Controller with action name error does not exists
+2019-07-30 20:18:18,496 - INFO - waiting for client connections... 
+2019-07-30 20:18:28,723 - INFO - Server shutdown.
+2019-07-30 21:31:56,196 - INFO - creating socet...
+2019-07-30 21:31:56,197 - INFO - binding socket on localhost:8001
+2019-07-30 21:31:56,200 - INFO - listening for /5/ clients
+2019-07-30 21:31:56,207 - INFO - Server started on localhost:8001. Ctrl+C for exit.
+2019-07-30 21:31:56,208 - INFO - waiting for client connections... 
+2019-07-30 21:32:23,109 - INFO - Server shutdown.
+2019-07-30 21:37:38,733 - INFO - creating socet...
+2019-07-30 21:37:38,734 - INFO - binding socket on localhost:8001
+2019-07-30 21:37:38,737 - INFO - listening for /5/ clients
+2019-07-30 21:37:38,744 - INFO - Server started on localhost:8001. Ctrl+C for exit.
+2019-07-30 21:37:38,746 - INFO - waiting for client connections... 
+2019-07-30 21:37:53,342 - INFO - Client was detected 127.0.0.1:13522
+2019-07-30 21:38:01,805 - INFO - Client send data {"action": "echo", "time": 1564511881.805324, "data": "test"}
+2019-07-30 21:38:01,822 - INFO - Client send valid request {'action': 'echo', 'time': 1564511881.805324, 'data': 'test'}
+2019-07-30 21:38:01,823 - DEBUG - get_echo:{'action': 'echo', 'time': 1564511881.805324, 'data': 'test'}
+2019-07-30 21:38:01,823 - INFO - waiting for client connections... 
+2019-07-30 21:39:26,001 - INFO - Server shutdown.
+2019-07-31 08:54:51,458 - INFO - creating socet...
+2019-07-31 08:54:51,459 - INFO - binding socket on localhost:8001
+2019-07-31 08:54:51,462 - INFO - listening for /5/ clients
+2019-07-31 08:54:51,462 - INFO - Server started on localhost:8001. Ctrl+C for exit.
+2019-07-31 08:54:51,463 - INFO - waiting for client connections... 
+2019-07-31 08:55:08,710 - INFO - Client was detected 127.0.0.1:1423
+2019-07-31 08:55:28,629 - INFO - Client send data {"action": "test", "time": 1564552528.629764, "data": "test"}
+2019-07-31 08:55:28,670 - ERROR - Controller with action name test does not exists
+2019-07-31 08:55:28,671 - INFO - waiting for client connections... 
+2019-07-31 08:55:44,822 - INFO - Client was detected 127.0.0.1:1447
+2019-07-31 08:55:52,717 - INFO - Client send data {"action": "echo", "time": 1564552552.71779, "data": "test"}
+2019-07-31 08:55:52,718 - INFO - Client send valid request {'action': 'echo', 'time': 1564552552.71779, 'data': 'test'}
+2019-07-31 08:55:52,719 - DEBUG - get_echo:{'action': 'echo', 'time': 1564552552.71779, 'data': 'test'}
+2019-07-31 08:55:52,726 - INFO - waiting for client connections... 
+2019-07-31 08:55:59,067 - INFO - Client was detected 127.0.0.1:1462
+2019-07-31 08:56:02,293 - INFO - Client send data {"action": "send", "time": 1564552562.29355, "data": "test"}
+2019-07-31 08:56:02,295 - INFO - Client send valid request {'action': 'send', 'time': 1564552562.29355, 'data': 'test'}
+2019-07-31 08:56:02,296 - DEBUG - send_message:{'action': 'send', 'time': 1564552562.29355, 'data': 'test'}
+2019-07-31 08:56:02,303 - INFO - waiting for client connections... 
+2019-08-01 12:10:39,197 - INFO - Server shutdown.

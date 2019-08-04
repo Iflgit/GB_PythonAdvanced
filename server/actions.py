@@ -1,9 +1,9 @@
 from functools import reduce
 from settings import INSTALLED_APPS
+from decorators import trace_log
 
-
+@trace_log
 def get_server_actions():
-    print('get_server_actions call')
     modules = reduce(
         lambda value, item: value + [__import__(f'{item}.actions')],
         INSTALLED_APPS, []
@@ -19,8 +19,8 @@ def get_server_actions():
         actions, []
     )
 
+@trace_log
 def resolve(action_name, actions=None):
-    print('resolve call')
     action_list = actions or get_server_actions()
     action_mapping = {
         actions.get('action'): actions.get('controller')
