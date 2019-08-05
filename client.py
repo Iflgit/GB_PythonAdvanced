@@ -3,9 +3,26 @@ import socket
 import json
 from argparse import ArgumentParser
 from datetime import datetime
+import zlib
 
+
+WRITE_MODE = 'write'
+READ_MODE = 'read'
+
+
+def make_request(action, data):
+    request = {
+        'action': action,
+        'time': datetime.now().timestamp(),
+        'data': data
+    }
+    return request
 
 parser = ArgumentParser()
+
+parser.add_argument(
+    '-m', '--mode', type=str, default ='write', help='Sets client mode'
+)
 
 parser.add_argument(
     '-c', '--config', type=str, required=False, help='Sets config file'
@@ -48,22 +65,23 @@ try:
     client_socket.connect((host, port))
     print('Client was started')
 
-    action = input('Enter action: ')
-    data = input('Enter message: ')
+    while True:
+        if args.mode == WRITE_MODE:
+            action = input('Enter action: ')
+            data = input('Enter message: ')
 
-    request = {
-        'action': action,
-        'time': datetime.now().timestamp(),
-        'data': data
-    }
+            request = make_request(action, data)
 
-    str_request = json.dumps(request)
+            str_request = json.dumps(request)
 
-    client_socket.send(str_request.encode())
-    print(f'Client sending data: /{str_request}/')
+            bytes_requests = zlib.compress(str_request.encode())
 
-    response = client_socket.recv(config.get('buffersize')).decode()
-    print(f'Server send data {response}')
+            client_socket.send(bytes_requests)
+            print(f'Client sending data: /{str_request}/')
+        elif args.mode == READ_MODE:
+            b_response = client_socket.recv(config.get('buffersize'))
+            bytes_response = zlib.decompress(b_response)
+            print(f'Server send data {bytes_response.decode()}')
 except ConnectionRefusedError:
     print('Connection error, please check server')
 except KeyboardInterrupt:
