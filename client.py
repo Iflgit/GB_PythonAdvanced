@@ -1,14 +1,27 @@
 import yaml
 import socket
 import json
+import threading
+import zlib
 from argparse import ArgumentParser
 from datetime import datetime
-import zlib
 
 
-WRITE_MODE = 'write'
-READ_MODE = 'read'
+def read(sock, buffersize):
+    while True:
+        try:
+            response = sock.recv(buffersize)
+        except Exception as err:
+            print(f'Internal client error {err}. Stop reading.')
+            return
 
+        try:
+            bytes_response = zlib.decompress(response)
+        except Exception as err:
+            print(f'Error in recieved data with {err}. Now stop receiving data.')
+            return
+        else:
+            print(bytes_response.decode())
 
 def make_request(action, data):
     request = {
@@ -21,17 +34,11 @@ def make_request(action, data):
 parser = ArgumentParser()
 
 parser.add_argument(
-    '-m', '--mode', type=str, default ='write', help='Sets client mode'
-)
-
-parser.add_argument(
     '-c', '--config', type=str, required=False, help='Sets config file'
 )
-
 parser.add_argument(
     '-p', '--port', type=int, required=False, help='Sets server port number'
 )
-
 parser.add_argument(
     '-a', '--address', type=str, required=False, help = 'Sets server ip address'
 )
@@ -60,30 +67,29 @@ host, port = config.get('host'), config.get('port')
 try:
     print(f'creating socket...')
     client_socket = socket.socket()
-    client_socket.settimeout(5)
+    # client_socket.settimeout(5)
     print(f'connecting to {host}:{port}')
     client_socket.connect((host, port))
     print('Client was started')
 
+    read_thread = threading.Thread(
+        target=read, args=(client_socket, config.get('buffersize'))
+    )
+    read_thread.start()
+
     while True:
-        if args.mode == WRITE_MODE:
-            action = input('Enter action: ')
-            data = input('Enter message: ')
+        action = input('Enter action: ')
+        data = input('Enter message: ')
 
-            request = make_request(action, data)
+        request = make_request(action, data)
 
-            str_request = json.dumps(request)
+        str_request = json.dumps(request)
 
-            bytes_requests = zlib.compress(str_request.encode())
+        bytes_requests = zlib.compress(str_request.encode())
 
-            client_socket.send(bytes_requests)
-            print(f'Client sending data: /{str_request}/')
-        elif args.mode == READ_MODE:
-            b_response = client_socket.recv(config.get('buffersize'))
-            bytes_response = zlib.decompress(b_response)
-            print(f'Server send data {bytes_response.decode()}')
+        client_socket.send(bytes_requests)
+        print(f'Client sending data: /{str_request}/')
 except ConnectionRefusedError:
-    print('Connection error, please check server')
+    print('Connection error, check server please.')
 except KeyboardInterrupt:
     print('client shutdown.')
-
