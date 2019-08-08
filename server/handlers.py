@@ -6,7 +6,6 @@ from middlewares import compression_middleware, encription_middleware
 from decorators import trace_log
 
 
-
 @trace_log
 @compression_middleware
 @encription_middleware
